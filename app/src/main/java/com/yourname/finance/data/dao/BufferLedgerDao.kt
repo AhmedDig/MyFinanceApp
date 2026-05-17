@@ -9,12 +9,11 @@ interface BufferLedgerDao {
     @Query("SELECT * FROM buffer_ledger WHERE month = :month")
     suspend fun getByMonth(month: String): BufferLedger?
 
-    @Query("SELECT * FROM buffer_ledger ORDER BY month DESC")
-    fun getAll(): Flow<List<BufferLedger>>
+    @Query("SELECT * FROM buffer_ledger ORDER BY month DESC") fun getAll(): Flow<List<BufferLedger>>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(ledger: BufferLedger)
+    @Query("DELETE FROM buffer_ledger") suspend fun deleteAll()
 
-    @Update
-    suspend fun update(ledger: BufferLedger)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insert(ledger: BufferLedger)
+
+    @Update suspend fun update(ledger: BufferLedger)
 }

@@ -77,22 +77,22 @@
     <color name="textMuted">#6B7280</color>
     <string name="app_name">MyFinance</string>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primaryDark</item>
-        <item name="colorAccent">@color/accent</item>
-        <item name="android:colorBackground">@color/bgLight</item>
-    </style>
+		<item name="colorPrimary">@color/primary</item>
+		<item name="colorPrimaryDark">@color/primaryDark</item>
+		<item name="colorAccent">@color/accent</item>
+		<item name="android:colorBackground">@color/bgLight</item>
+	</style>
     <style name="DashboardCard" parent="Widget.MaterialComponents.CardView">
-        <item name="cardBackgroundColor">@color/surface</item>
-        <item name="cardCornerRadius">16dp</item>
-        <item name="cardElevation">2dp</item>
-        <item name="contentPadding">16dp</item>
-        <item name="strokeWidth">0dp</item>
-    </style>
+		<item name="cardBackgroundColor">@color/surface</item>
+		<item name="cardCornerRadius">16dp</item>
+		<item name="cardElevation">2dp</item>
+		<item name="contentPadding">16dp</item>
+		<item name="strokeWidth">0dp</item>
+	</style>
     <style name="ToggleButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="backgroundTint">@color/toggle_button_background</item>
-        <item name="strokeColor">@color/toggle_button_stroke</item>
-        <item name="android:textColor">@color/toggle_button_text</item>
-        <item name="cornerRadius">8dp</item>
-    </style>
+		<item name="backgroundTint">@color/toggle_button_background</item>
+		<item name="strokeColor">@color/toggle_button_stroke</item>
+		<item name="android:textColor">@color/toggle_button_text</item>
+		<item name="cornerRadius">8dp</item>
+	</style>
 </resources>

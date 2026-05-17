@@ -5,15 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.button.MaterialButtonToggleGroup;
-import com.google.android.material.textfield.TextInputEditText;
 import com.yourname.finance.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -24,22 +24,22 @@ public final class BottomSheetAddTransactionBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final MaterialButton btnExpense;
+  public final RadioButton btnExpense;
 
   @NonNull
-  public final MaterialButton btnIncome;
+  public final RadioButton btnIncome;
 
   @NonNull
   public final Button btnSave;
 
   @NonNull
-  public final TextInputEditText etAmount;
+  public final EditText etAmount;
 
   @NonNull
-  public final TextInputEditText etDate;
+  public final EditText etDate;
 
   @NonNull
-  public final TextInputEditText etNotes;
+  public final EditText etNotes;
 
   @NonNull
   public final Spinner spinnerCategory;
@@ -48,14 +48,13 @@ public final class BottomSheetAddTransactionBinding implements ViewBinding {
   public final Spinner spinnerSubcategory;
 
   @NonNull
-  public final MaterialButtonToggleGroup toggleType;
+  public final RadioGroup toggleType;
 
   private BottomSheetAddTransactionBinding(@NonNull LinearLayout rootView,
-      @NonNull MaterialButton btnExpense, @NonNull MaterialButton btnIncome,
-      @NonNull Button btnSave, @NonNull TextInputEditText etAmount,
-      @NonNull TextInputEditText etDate, @NonNull TextInputEditText etNotes,
+      @NonNull RadioButton btnExpense, @NonNull RadioButton btnIncome, @NonNull Button btnSave,
+      @NonNull EditText etAmount, @NonNull EditText etDate, @NonNull EditText etNotes,
       @NonNull Spinner spinnerCategory, @NonNull Spinner spinnerSubcategory,
-      @NonNull MaterialButtonToggleGroup toggleType) {
+      @NonNull RadioGroup toggleType) {
     this.rootView = rootView;
     this.btnExpense = btnExpense;
     this.btnIncome = btnIncome;
@@ -96,13 +95,13 @@ public final class BottomSheetAddTransactionBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btn_expense;
-      MaterialButton btnExpense = ViewBindings.findChildViewById(rootView, id);
+      RadioButton btnExpense = ViewBindings.findChildViewById(rootView, id);
       if (btnExpense == null) {
         break missingId;
       }
 
       id = R.id.btn_income;
-      MaterialButton btnIncome = ViewBindings.findChildViewById(rootView, id);
+      RadioButton btnIncome = ViewBindings.findChildViewById(rootView, id);
       if (btnIncome == null) {
         break missingId;
       }
@@ -114,19 +113,19 @@ public final class BottomSheetAddTransactionBinding implements ViewBinding {
       }
 
       id = R.id.et_amount;
-      TextInputEditText etAmount = ViewBindings.findChildViewById(rootView, id);
+      EditText etAmount = ViewBindings.findChildViewById(rootView, id);
       if (etAmount == null) {
         break missingId;
       }
 
       id = R.id.et_date;
-      TextInputEditText etDate = ViewBindings.findChildViewById(rootView, id);
+      EditText etDate = ViewBindings.findChildViewById(rootView, id);
       if (etDate == null) {
         break missingId;
       }
 
       id = R.id.et_notes;
-      TextInputEditText etNotes = ViewBindings.findChildViewById(rootView, id);
+      EditText etNotes = ViewBindings.findChildViewById(rootView, id);
       if (etNotes == null) {
         break missingId;
       }
@@ -144,7 +143,7 @@ public final class BottomSheetAddTransactionBinding implements ViewBinding {
       }
 
       id = R.id.toggle_type;
-      MaterialButtonToggleGroup toggleType = ViewBindings.findChildViewById(rootView, id);
+      RadioGroup toggleType = ViewBindings.findChildViewById(rootView, id);
       if (toggleType == null) {
         break missingId;
       }

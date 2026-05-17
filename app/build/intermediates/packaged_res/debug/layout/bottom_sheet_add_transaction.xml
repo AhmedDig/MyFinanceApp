@@ -4,41 +4,32 @@
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="New Transaction" android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" android:textColor="@color/textDark" android:layout_marginBottom="16dp" />
 
-    <!-- Type toggle -->
-    <com.google.android.material.button.MaterialButtonToggleGroup android:id="@+id/toggle_type" android:layout_width="match_parent" android:layout_height="wrap_content" app:singleSelection="true" app:checkedButton="@+id/btn_expense" app:selectionRequired="true">
+    <!-- Type toggle: simple, no custom styles -->
+    <RadioGroup android:id="@+id/toggle_type" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:checkedButton="@+id/btn_expense">
 
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn_income" style="@style/ToggleButton" android:layout_width="0dp" android:layout_weight="1" android:text="Income" />
+        <RadioButton android:id="@+id/btn_income" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Income" />
 
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn_expense" style="@style/ToggleButton" android:layout_width="0dp" android:layout_weight="1" android:text="Expense" />
-    </com.google.android.material.button.MaterialButtonToggleGroup>
+        <RadioButton android:id="@+id/btn_expense" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Expense" />
+    </RadioGroup>
 
-    <!-- Main Category Spinner -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Category" android:textColor="@color/textMuted" android:layout_marginTop="16dp" android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+    <!-- Category -->
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Category" android:textColor="@color/textMuted" android:layout_marginTop="16dp" />
 
     <Spinner android:id="@+id/spinner_category" android:layout_width="match_parent" android:layout_height="wrap_content" android:entries="@array/categories_list" android:padding="12dp" />
 
-    <!-- Subcategory Spinner -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Subcategory" android:textColor="@color/textMuted" android:layout_marginTop="16dp" android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+    <!-- Subcategory -->
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Subcategory" android:textColor="@color/textMuted" android:layout_marginTop="16dp" />
 
     <Spinner android:id="@+id/spinner_subcategory" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" />
 
     <!-- Amount -->
-    <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:hint="Amount (₪)">
-
-        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_amount" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <EditText android:id="@+id/et_amount" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:hint="Amount (₪)" android:inputType="numberDecimal" android:background="@android:drawable/editbox_background" />
 
     <!-- Date -->
-    <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:hint="Date (yyyy-mm-dd)">
-
-        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_date" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="date" android:focusable="false" android:clickable="true" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <EditText android:id="@+id/et_date" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:hint="Date (yyyy-mm-dd)" android:inputType="date" android:focusable="false" android:clickable="true" android:background="@android:drawable/editbox_background" />
 
     <!-- Notes -->
-    <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:hint="Notes (optional)">
+    <EditText android:id="@+id/et_notes" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:hint="Notes (optional)" android:background="@android:drawable/editbox_background" />
 
-        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_notes" android:layout_width="match_parent" android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button android:id="@+id/btn_save" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="Save Transaction" android:backgroundTint="@color/primary" />
+    <Button android:id="@+id/btn_save" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="Save Transaction" android:backgroundTint="@color/accent" />
 </LinearLayout>

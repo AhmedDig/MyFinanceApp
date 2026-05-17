@@ -1,9 +1,20 @@
 -- Merging decision tree log ---
+provider#androidx.core.content.FileProvider
+INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:12:3-14:14
+	android:grantUriPermissions
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:12:140-174
+	android:authorities
+		INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:12:63-114
+	android:exported
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:12:115-139
+	android:name
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:12:13-62
 manifest
-ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:2:1-15:12
-INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:2:1-15:12
-INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:2:1-15:12
-INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:2:1-15:12
+ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:2:1-16:12
+INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:2:1-16:12
+INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:2:1-16:12
+INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:2:1-16:12
 MERGED from [androidx.databinding:viewbinding:8.2.0] /home/workstation/.gradle/caches/transforms-3/656be1f24a9f2d9d82fdaa0a42fa02c2/transformed/viewbinding-8.2.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.7.6] /home/workstation/.gradle/caches/transforms-3/d81b5669c9191603da9db7091bc7ec60/transformed/navigation-common-2.7.6/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.6] /home/workstation/.gradle/caches/transforms-3/df89da82b4c0d6cb7a46d48c84d933b9/transformed/navigation-common-ktx-2.7.6/AndroidManifest.xml:2:1-7:12
@@ -13,7 +24,7 @@ MERGED from [androidx.navigation:navigation-fragment:2.7.6] /home/workstation/.g
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.7.6] /home/workstation/.gradle/caches/transforms-3/56027c3a69d80abf4041d5eaece3dd79/transformed/navigation-fragment-ktx-2.7.6/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-ui-ktx:2.7.6] /home/workstation/.gradle/caches/transforms-3/561ab8e21e28852adcf373baf9da1f09/transformed/navigation-ui-ktx-2.7.6/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-ui:2.7.6] /home/workstation/.gradle/caches/transforms-3/403d9defc1c9b0fa9a934d9da27c90a7/transformed/navigation-ui-2.7.6/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.material:material:1.10.0] /home/workstation/.gradle/caches/transforms-3/03a493b9814f1756622e94c85cafdeb2/transformed/material-1.10.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.11.0] /home/workstation/.gradle/caches/transforms-3/6010253069e227989aaf0a12bd587aac/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/workstation/.gradle/caches/transforms-3/3750ac6562d52935c7867dee383a0fbc/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/workstation/.gradle/caches/transforms-3/fa8e2dbb4f7011bad0d2fbd7bd556672/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] /home/workstation/.gradle/caches/transforms-3/795b370e74b337b819f768b029901e55/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
@@ -72,16 +83,16 @@ MERGED from [androidx.print:print:1.0.0] /home/workstation/.gradle/caches/transf
 	android:versionName
 		INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:4:2-48
 	android:versionCode
 		INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:3:2-60
 application
-ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:5-14:19
-INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:5-14:19
-MERGED from [com.google.android.material:material:1.10.0] /home/workstation/.gradle/caches/transforms-3/03a493b9814f1756622e94c85cafdeb2/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.10.0] /home/workstation/.gradle/caches/transforms-3/03a493b9814f1756622e94c85cafdeb2/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
+ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:2-15:16
+INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:2-15:16
+MERGED from [com.google.android.material:material:1.11.0] /home/workstation/.gradle/caches/transforms-3/6010253069e227989aaf0a12bd587aac/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.11.0] /home/workstation/.gradle/caches/transforms-3/6010253069e227989aaf0a12bd587aac/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/workstation/.gradle/caches/transforms-3/3750ac6562d52935c7867dee383a0fbc/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/workstation/.gradle/caches/transforms-3/3750ac6562d52935c7867dee383a0fbc/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.emoji2:emoji2:1.2.0] /home/workstation/.gradle/caches/transforms-3/0ea4a96b446ded5503e8a329c5947c26/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
@@ -105,33 +116,39 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/workstation/.gradle/c
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] /home/workstation/.gradle/caches/transforms-3/a37a69b4826a46e34160b54efe34ea95/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:113-139
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:110-136
 	android:label
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:80-112
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:77-109
 	android:icon
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:172-206
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:169-203
 	android:allowBackup
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:18-44
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:15-41
 	android:theme
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:140-171
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:137-168
 	android:name
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:45-79
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:5:42-76
 activity#com.yourname.finance.MainActivity
-ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:7:9-12:20
+ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:6:3-11:14
 	android:exported
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:7:48-71
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:6:42-65
 	android:name
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:7:19-47
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:6:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:8:13-11:29
+ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:7:4-10:20
 action#android.intent.action.MAIN
-ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:9:17-69
+ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:8:5-57
 	android:name
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:9:25-66
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:8:13-54
 category#android.intent.category.LAUNCHER
-ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:10:17-77
+ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:9:5-65
 	android:name
-		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:10:27-74
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:9:15-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:13:4-103
+	android:resource
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:13:66-100
+	android:name
+		ADDED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml:13:15-65
 uses-sdk
 INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/workstation/MyFinanceApp/app/src/main/AndroidManifest.xml
@@ -154,8 +171,8 @@ MERGED from [androidx.navigation:navigation-ui-ktx:2.7.6] /home/workstation/.gra
 MERGED from [androidx.navigation:navigation-ui-ktx:2.7.6] /home/workstation/.gradle/caches/transforms-3/561ab8e21e28852adcf373baf9da1f09/transformed/navigation-ui-ktx-2.7.6/AndroidManifest.xml:5:5-44
 MERGED from [androidx.navigation:navigation-ui:2.7.6] /home/workstation/.gradle/caches/transforms-3/403d9defc1c9b0fa9a934d9da27c90a7/transformed/navigation-ui-2.7.6/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-ui:2.7.6] /home/workstation/.gradle/caches/transforms-3/403d9defc1c9b0fa9a934d9da27c90a7/transformed/navigation-ui-2.7.6/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.10.0] /home/workstation/.gradle/caches/transforms-3/03a493b9814f1756622e94c85cafdeb2/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.10.0] /home/workstation/.gradle/caches/transforms-3/03a493b9814f1756622e94c85cafdeb2/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.11.0] /home/workstation/.gradle/caches/transforms-3/6010253069e227989aaf0a12bd587aac/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.11.0] /home/workstation/.gradle/caches/transforms-3/6010253069e227989aaf0a12bd587aac/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/workstation/.gradle/caches/transforms-3/3750ac6562d52935c7867dee383a0fbc/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/workstation/.gradle/caches/transforms-3/3750ac6562d52935c7867dee383a0fbc/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/workstation/.gradle/caches/transforms-3/fa8e2dbb4f7011bad0d2fbd7bd556672/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44

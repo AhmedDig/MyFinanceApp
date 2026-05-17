@@ -4,11 +4,10 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.yourname.finance.FinanceApplication
-import com.yourname.finance.data.BufferLedger
 import com.yourname.finance.data.Transaction
-import kotlinx.coroutines.flow.*
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlinx.coroutines.flow.*
 
 data class DashboardData(
     val month: String,
@@ -29,13 +28,25 @@ class DashboardViewModel(application: Application) : AndroidViewModel(applicatio
         _currentMonth
             .flatMapLatest { month ->
                 combine(
+                    // Flow 1: income & expenses for the selected month
                     db.transactionDao().getByMonth(month).map { list ->
-                        list.filter { it.type == "Income" }.sumOf { it.amount } to
-                            list.filter { it.type == "Expense" }.sumOf { it.amount }
+                        val income = list.filter { it.type == "Income" }.sumOf { it.amount }
+                        val expenses = list.filter { it.type == "Expense" }.sumOf { it.amount }
+                        income to expenses
                     },
-                    flow {
-                        val ledger = db.bufferLedgerDao().getByMonth(month)
-                        emit(ledger?.endingBuffer ?: 0.0)
+                    // Flow 2: all transactions -> compute accumulated net (buffer) up to selected
+                    // month
+                    db.transactionDao().getAll().map { allTransactions ->
+                        var buffer = 0.0
+                        for (tx in allTransactions) {
+                            val txMonth =
+                                SimpleDateFormat("yyyy-MM", Locale.getDefault()).format(tx.date)
+                            if (txMonth <= month) {
+                                if (tx.type == "Income") buffer += tx.amount
+                                else buffer -= tx.amount
+                            }
+                        }
+                        buffer
                     },
                 ) { (income, expenses), buffer ->
                     val net = income - expenses

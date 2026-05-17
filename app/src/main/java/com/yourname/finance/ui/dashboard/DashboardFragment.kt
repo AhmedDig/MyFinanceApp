@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.yourname.finance.databinding.FragmentDashboardBinding
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
@@ -35,9 +36,21 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[DashboardViewModel::class.java]
 
+        // Setup RecyclerView once
         binding.rvRecentTransactions.adapter = recentAdapter
+        binding.rvRecentTransactions.layoutManager = LinearLayoutManager(requireContext())
 
-        // Observe dashboard data (all main fields)
+        // Observe month directly from currentMonth flow
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.currentMonth.collectLatest { month ->
+                val monthDisplay =
+                    SimpleDateFormat("MMMM yyyy", Locale.getDefault())
+                        .format(SimpleDateFormat("yyyy-MM", Locale.getDefault()).parse(month)!!)
+                binding.tvMonthHeader.text = monthDisplay
+            }
+        }
+
+        // Observe dashboard data (cards)
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.dashboardData.collectLatest { data ->
                 binding.tvTotalIncome.text = formatCurrency(data.income)
@@ -45,18 +58,10 @@ class DashboardFragment : Fragment() {
                 binding.tvNetResult.text = formatCurrency(data.netResult)
                 binding.tvBuffer.text = formatCurrency(data.buffer)
                 binding.tvRunway.text = data.runwayDays
-                viewModel.recentTransactions.collectLatest { recentAdapter.submitList(it) }
-
-                val monthDisplay =
-                    SimpleDateFormat("MMMM yyyy", Locale.getDefault())
-                        .format(
-                            SimpleDateFormat("yyyy-MM", Locale.getDefault()).parse(data.month)!!
-                        )
-                binding.tvMonthHeader.text = monthDisplay
             }
         }
 
-        // Observe recent transactions
+        // Observe recent transactions separately
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.recentTransactions.collectLatest { list -> recentAdapter.submitList(list) }
         }

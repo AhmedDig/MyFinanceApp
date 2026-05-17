@@ -33,6 +33,10 @@ class TransactionsViewModel(application: Application) : AndroidViewModel(applica
         viewModelScope.launch { db.transactionDao().insert(transaction) }
     }
 
+    fun updateTransaction(transaction: Transaction) {
+        viewModelScope.launch { db.transactionDao().update(transaction) }
+    }
+
     private fun adjustMonth(month: String, delta: Int): String {
         val sdf = SimpleDateFormat("yyyy-MM", Locale.getDefault())
         val date = sdf.parse(month)!!

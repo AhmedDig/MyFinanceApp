@@ -11,13 +11,14 @@ import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
-class TransactionAdapter(private val onReceiptClick: (Transaction) -> Unit) :
-    ListAdapter<Transaction, TransactionAdapter.ViewHolder>(DiffCallback()) {
+class TransactionAdapter(
+    private val onReceiptClick: (Transaction) -> Unit,
+    private val onItemClick: (Transaction) -> Unit
+) : ListAdapter<Transaction, TransactionAdapter.ViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding =
-            ItemTransactionBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding, onReceiptClick)
+        val binding = ItemTransactionBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding, onReceiptClick, onItemClick)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -27,10 +28,12 @@ class TransactionAdapter(private val onReceiptClick: (Transaction) -> Unit) :
     class ViewHolder(
         private val binding: ItemTransactionBinding,
         private val onReceiptClick: (Transaction) -> Unit,
+        private val onItemClick: (Transaction) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
+
         fun bind(transaction: Transaction) {
             val context = binding.root.context
-            // Category dot color (use green for income, red for expense for now)
+            // Category dot color
             if (transaction.type == "Income") {
                 binding.vCategoryDot.background.setTint(
                     context.getColor(com.yourname.finance.R.color.incomeGreen)
@@ -41,7 +44,7 @@ class TransactionAdapter(private val onReceiptClick: (Transaction) -> Unit) :
                 )
             }
 
-            binding.tvCategoryName.text = transaction.categoryId // TODO: resolve category name
+            binding.tvCategoryName.text = transaction.categoryId
             binding.tvDateSubcategory.text =
                 "${SimpleDateFormat("dd MMM", Locale.getDefault()).format(transaction.date)} · ${transaction.subcategory ?: ""}"
             val formattedAmount = formatCurrency(transaction.amount)
@@ -54,6 +57,7 @@ class TransactionAdapter(private val onReceiptClick: (Transaction) -> Unit) :
             )
 
             binding.btnReceipt.setOnClickListener { onReceiptClick(transaction) }
+            binding.root.setOnClickListener { onItemClick(transaction) }
         }
 
         private fun formatCurrency(amount: Double): String {

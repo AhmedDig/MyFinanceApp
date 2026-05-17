@@ -29,11 +29,15 @@ drawable circle_dot
 drawable ic_add
 drawable ic_chevron_left
 drawable ic_chevron_right
+drawable ic_delete
+drawable ic_download
 drawable ic_dropdown_arrow
 drawable ic_receipt
 drawable spinner_background
 drawable spinner_border
 id bottom_navigation
+id btn_delete_range
+id btn_download_report
 id btn_expense
 id btn_income
 id btn_next_month
@@ -43,7 +47,9 @@ id btn_save
 id dashboardFragment
 id et_amount
 id et_date
+id et_end_date
 id et_notes
+id et_start_date
 id fab_add_transaction
 id nav_host_fragment
 id progress_runway
@@ -61,6 +67,7 @@ id tv_date_subcategory
 id tv_month_header
 id tv_net_result
 id tv_runway
+id tv_status
 id tv_total_expenses
 id tv_total_income
 id v_category_dot
@@ -79,3 +86,4 @@ string app_name
 style AppTheme
 style DashboardCard
 style ToggleButton
+xml file_paths

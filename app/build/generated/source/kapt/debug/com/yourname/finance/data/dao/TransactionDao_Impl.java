@@ -7,6 +7,7 @@ import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
@@ -39,6 +40,12 @@ public final class TransactionDao_Impl implements TransactionDao {
   private final Converters __converters = new Converters();
 
   private final EntityDeletionOrUpdateAdapter<Transaction> __deletionAdapterOfTransaction;
+
+  private final EntityDeletionOrUpdateAdapter<Transaction> __updateAdapterOfTransaction;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteByDateRange;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteAll;
 
   public TransactionDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
@@ -118,6 +125,86 @@ public final class TransactionDao_Impl implements TransactionDao {
         }
       }
     };
+    this.__updateAdapterOfTransaction = new EntityDeletionOrUpdateAdapter<Transaction>(__db) {
+      @Override
+      @NonNull
+      protected String createQuery() {
+        return "UPDATE OR ABORT `transactions` SET `id` = ?,`date` = ?,`type` = ?,`account` = ?,`categoryId` = ?,`subcategory` = ?,`amount` = ?,`paymentMethod` = ?,`notes` = ?,`isRecurring` = ?,`lastModified` = ?,`synced` = ? WHERE `id` = ?";
+      }
+
+      @Override
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final Transaction entity) {
+        if (entity.getId() == null) {
+          statement.bindNull(1);
+        } else {
+          statement.bindString(1, entity.getId());
+        }
+        final Long _tmp = __converters.dateToTimestamp(entity.getDate());
+        if (_tmp == null) {
+          statement.bindNull(2);
+        } else {
+          statement.bindLong(2, _tmp);
+        }
+        if (entity.getType() == null) {
+          statement.bindNull(3);
+        } else {
+          statement.bindString(3, entity.getType());
+        }
+        if (entity.getAccount() == null) {
+          statement.bindNull(4);
+        } else {
+          statement.bindString(4, entity.getAccount());
+        }
+        if (entity.getCategoryId() == null) {
+          statement.bindNull(5);
+        } else {
+          statement.bindString(5, entity.getCategoryId());
+        }
+        if (entity.getSubcategory() == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindString(6, entity.getSubcategory());
+        }
+        statement.bindDouble(7, entity.getAmount());
+        if (entity.getPaymentMethod() == null) {
+          statement.bindNull(8);
+        } else {
+          statement.bindString(8, entity.getPaymentMethod());
+        }
+        if (entity.getNotes() == null) {
+          statement.bindNull(9);
+        } else {
+          statement.bindString(9, entity.getNotes());
+        }
+        final int _tmp_1 = entity.isRecurring() ? 1 : 0;
+        statement.bindLong(10, _tmp_1);
+        statement.bindLong(11, entity.getLastModified());
+        final int _tmp_2 = entity.getSynced() ? 1 : 0;
+        statement.bindLong(12, _tmp_2);
+        if (entity.getId() == null) {
+          statement.bindNull(13);
+        } else {
+          statement.bindString(13, entity.getId());
+        }
+      }
+    };
+    this.__preparedStmtOfDeleteByDateRange = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "DELETE FROM transactions WHERE date BETWEEN ? AND ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfDeleteAll = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "DELETE FROM transactions";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -153,6 +240,86 @@ public final class TransactionDao_Impl implements TransactionDao {
           return Unit.INSTANCE;
         } finally {
           __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object update(final Transaction transaction,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfTransaction.handle(transaction);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object deleteByDateRange(final Date startDate, final Date endDate,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteByDateRange.acquire();
+        int _argIndex = 1;
+        final Long _tmp = __converters.dateToTimestamp(startDate);
+        if (_tmp == null) {
+          _stmt.bindNull(_argIndex);
+        } else {
+          _stmt.bindLong(_argIndex, _tmp);
+        }
+        _argIndex = 2;
+        final Long _tmp_1 = __converters.dateToTimestamp(endDate);
+        if (_tmp_1 == null) {
+          _stmt.bindNull(_argIndex);
+        } else {
+          _stmt.bindLong(_argIndex, _tmp_1);
+        }
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfDeleteByDateRange.release(_stmt);
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object deleteAll(final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteAll.acquire();
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfDeleteAll.release(_stmt);
         }
       }
     }, $completion);

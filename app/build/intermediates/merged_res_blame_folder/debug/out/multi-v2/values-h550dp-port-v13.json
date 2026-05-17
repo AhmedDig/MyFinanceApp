@@ -4,13 +4,13 @@
             "outputFile": "com.yourname.finance.app-mergeDebugResources-50:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/home/workstation/.gradle/caches/transforms-3/03a493b9814f1756622e94c85cafdeb2/transformed/material-1.10.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+                    "source": "/home/workstation/.gradle/caches/transforms-3/6010253069e227989aaf0a12bd587aac/transformed/material-1.11.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
-                        "endColumns": "76",
-                        "endOffsets": "127"
+                        "endColumns": "64",
+                        "endOffsets": "115"
                     }
                 }
             ]

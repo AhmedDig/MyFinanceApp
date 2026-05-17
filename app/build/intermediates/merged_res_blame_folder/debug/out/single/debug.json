@@ -8,6 +8,10 @@
         "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/color/toggle_button_stroke.xml"
     },
     {
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/xml_file_paths.xml.flat",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/xml/file_paths.xml"
+    },
+    {
         "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/color_toggle_button_background.xml.flat",
         "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/color/toggle_button_background.xml"
     },
@@ -20,20 +24,24 @@
         "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/drawable/ic_add.xml"
     },
     {
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/drawable_ic_receipt.xml.flat",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/drawable/ic_receipt.xml"
+    },
+    {
         "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/layout_activity_main.xml.flat",
         "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/layout/activity_main.xml"
     },
     {
-        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/drawable_ic_receipt.xml.flat",
-        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/drawable/ic_receipt.xml"
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/layout_fragment_transactions.xml.flat",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/layout/fragment_transactions.xml"
     },
     {
         "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/mipmap_background_app.png.flat",
         "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/mipmap/background_app.png"
     },
     {
-        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/layout_fragment_transactions.xml.flat",
-        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/layout/fragment_transactions.xml"
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/drawable_ic_download.xml.flat",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/drawable/ic_download.xml"
     },
     {
         "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/layout_fragment_dashboard.xml.flat",
@@ -68,36 +76,36 @@
         "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/drawable/circle_dot.xml"
     },
     {
-        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/mipmap_forground_app.png.flat",
-        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/mipmap/forground_app.png"
-    },
-    {
         "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/drawable_spinner_border.xml.flat",
         "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/drawable/spinner_border.xml"
+    },
+    {
+        "merged": "com.yourname.finance.app-merged_res-52:/layout_activity_main.xml.flat",
+        "source": "com.yourname.finance.app-main-54:/layout/activity_main.xml"
     },
     {
         "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/menu_bottom_nav_menu.xml.flat",
         "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/menu/bottom_nav_menu.xml"
     },
     {
-        "merged": "com.yourname.finance.app-merged_res-52:/color_bottom_nav_color.xml.flat",
-        "source": "com.yourname.finance.app-main-54:/color/bottom_nav_color.xml"
-    },
-    {
         "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/mipmap_ic_launcher.xml.flat",
         "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/mipmap/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/drawable_ic_delete.xml.flat",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/drawable/ic_delete.xml"
     },
     {
         "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/drawable_active_indicator_circle.xml.flat",
         "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/drawable/active_indicator_circle.xml"
     },
     {
-        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/drawable_spinner_background.xml.flat",
-        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/drawable/spinner_background.xml"
-    },
-    {
         "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/mipmap_foreground_app.png.flat",
         "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/mipmap/foreground_app.png"
+    },
+    {
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/drawable_spinner_background.xml.flat",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/drawable/spinner_background.xml"
     },
     {
         "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-merged_res-52:/navigation_nav_graph.xml.flat",
