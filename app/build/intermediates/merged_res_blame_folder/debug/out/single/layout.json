@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-mergeDebugResources-51:/layout/fragment_transactions.xml",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/layout/fragment_transactions.xml"
+    },
+    {
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-mergeDebugResources-51:/layout/fragment_dashboard.xml",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-mergeDebugResources-51:/layout/activity_main.xml",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-mergeDebugResources-51:/layout/bottom_sheet_add_transaction.xml",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/layout/bottom_sheet_add_transaction.xml"
+    },
+    {
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-mergeDebugResources-51:/layout/fragment_setup.xml",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/layout/fragment_setup.xml"
+    },
+    {
+        "merged": "com.yourname.finance.app-mergeDebugResources-51:/layout/bottom_sheet_add_transaction.xml",
+        "source": "com.yourname.finance.app-main-54:/layout/bottom_sheet_add_transaction.xml"
+    },
+    {
+        "merged": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-mergeDebugResources-51:/layout/item_transaction.xml",
+        "source": "/home/workstation/.gradle/daemon/8.5/com.yourname.finance.app-main-54:/layout/item_transaction.xml"
+    }
+]

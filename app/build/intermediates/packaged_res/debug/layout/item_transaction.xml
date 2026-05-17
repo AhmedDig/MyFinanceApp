@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" style="@style/Widget.MaterialComponents.CardView" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginVertical="4dp" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground" app:cardCornerRadius="8dp" app:cardElevation="1dp" app:contentPadding="12dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+
+        <!-- Category color dot -->
+        <View android:id="@+id/v_category_dot" android:layout_width="12dp" android:layout_height="12dp" android:layout_marginEnd="12dp" android:background="@drawable/circle_dot" tools:backgroundTint="@color/incomeGreen" />
+
+        <!-- Details -->
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+
+            <TextView android:id="@+id/tv_category_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" android:textColor="@color/textDark" tools:text="Groceries" />
+
+            <TextView android:id="@+id/tv_date_subcategory" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" android:textColor="@color/textMuted" tools:text="17 May · Vegetables" />
+        </LinearLayout>
+
+        <!-- Amount -->
+        <TextView android:id="@+id/tv_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" android:textStyle="bold" tools:text="₪150" tools:textColor="@color/expenseRed" />
+
+        <!-- Receipt icon -->
+        <ImageButton android:id="@+id/btn_receipt" android:layout_width="32dp" android:layout_height="32dp" android:layout_marginStart="8dp" android:background="?attr/selectableItemBackgroundBorderless" android:contentDescription="Share receipt" android:src="@drawable/ic_receipt" app:tint="@color/textMuted" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

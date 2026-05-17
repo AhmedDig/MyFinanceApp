@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main categories (expense + income) -->
+    <string-array name="categories_list">
+        <item>Select category</item>
+        <item>Income</item>
+        <item>Food</item>
+        <item>Bills</item>
+        <item>Household</item>
+        <item>Transport</item>
+        <item>Medical</item>
+        <item>Children</item>
+        <item>Personal</item>
+        <item>Irregular</item>
+    </string-array>
+
+    <!-- Subcategories for each main category -->
+    <string-array name="sub_income">
+        <item>Salary</item>
+        <item>Academy Income</item>
+        <item>Agency Income</item>
+        <item>Other Income</item>
+    </string-array>
+
+    <string-array name="sub_food">
+        <item>Groceries</item>
+        <item>Bread</item>
+        <item>Snacks / Treats</item>
+        <item>Eating Out</item>
+    </string-array>
+
+    <string-array name="sub_bills">
+        <item>Electricity</item>
+        <item>Internet</item>
+        <item>Phones</item>
+        <item>Gas (cooking/heating)</item>
+    </string-array>
+
+    <string-array name="sub_household">
+        <item>Cleaning supplies</item>
+        <item>Small repairs</item>
+        <item>Other household items</item>
+    </string-array>
+
+    <string-array name="sub_transport">
+        <item>Family trips / transport</item>
+        <item>Fuel (gasoline)</item>
+        <item>Bus / taxi</item>
+    </string-array>
+
+    <string-array name="sub_medical">
+        <item>Doctor appointments</item>
+        <item>Supplements</item>
+        <item>Medicines</item>
+        <item>Pregnancy spikes</item>
+    </string-array>
+
+    <string-array name="sub_children">
+        <item>Baby costs</item>
+        <item>Child clothing</item>
+        <item>School supplies</item>
+    </string-array>
+
+    <string-array name="sub_personal">
+        <item>Wife allowance</item>
+        <item>Barber</item>
+        <item>Clothing (self)</item>
+        <item>Cigarettes</item>
+        <item>Outings</item>
+        <item>Other personal</item>
+    </string-array>
+
+    <string-array name="sub_irregular">
+        <item>Eid</item>
+        <item>Emergencies</item>
+        <item>Home repairs</item>
+        <item>Car repairs</item>
+    </string-array>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bgLight">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="16dp">
+
+        <!-- Month selector (same as dashboard) -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:paddingBottom="16dp">
+
+            <ImageButton android:id="@+id/btn_prev_month" android:layout_width="40dp" android:layout_height="40dp" android:background="?attr/selectableItemBackgroundBorderless" android:contentDescription="Previous month" android:src="@drawable/ic_chevron_left" app:tint="@color/textDark" />
+
+            <TextView android:id="@+id/tv_month_header" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" android:textColor="@color/textDark" tools:text="May 2026" />
+
+            <ImageButton android:id="@+id/btn_next_month" android:layout_width="40dp" android:layout_height="40dp" android:background="?attr/selectableItemBackgroundBorderless" android:contentDescription="Next month" android:src="@drawable/ic_chevron_right" app:tint="@color/textDark" />
+        </LinearLayout>
+
+        <!-- Transactions list -->
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_transactions" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:clipToPadding="false" android:paddingBottom="80dp" tools:listitem="@layout/item_transaction" />
+
+        <!-- Floating Action Button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@+id/fab_add_transaction" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="end|bottom" android:layout_margin="16dp" android:contentDescription="Add transaction" android:src="@drawable/ic_add" app:backgroundTint="@color/accent" app:tint="@color/primary" app:layout_anchorGravity="bottom|end" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

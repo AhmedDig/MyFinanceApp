@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors -->
+    <color name="primary">#091a2a</color>    <!-- Deep navy -->
+    <color name="primaryDark">#010c14</color>
+    <color name="primarySoft">#2196f3</color>    <!-- Vibrant blue -->
+    <color name="accent">#ffc107</color>    <!-- Amber -->
+
+    <!-- Text Colors -->
+    <color name="textDark">#1F2937</color>
+    <color name="textMuted">#6B7280</color>
+
+    <!-- Background Colors -->
+    <color name="bgLight">#eeeeee</color>
+    <color name="surface">#FFFFFF</color>    <!-- Cards -->
+
+    <!-- Status Colors -->
+    <color name="incomeGreen">#2E7D32</color>
+    <color name="expenseRed">#C62828</color>
+</resources>

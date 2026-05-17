@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories_list">
+        <item>Select category</item>
+        <item>Income</item>
+        <item>Food</item>
+        <item>Bills</item>
+        <item>Household</item>
+        <item>Transport</item>
+        <item>Medical</item>
+        <item>Children</item>
+        <item>Personal</item>
+        <item>Irregular</item>
+    </string-array>
+    <string-array name="sub_bills">
+        <item>Electricity</item>
+        <item>Internet</item>
+        <item>Phones</item>
+        <item>Gas (cooking/heating)</item>
+    </string-array>
+    <string-array name="sub_children">
+        <item>Baby costs</item>
+        <item>Child clothing</item>
+        <item>School supplies</item>
+    </string-array>
+    <string-array name="sub_food">
+        <item>Groceries</item>
+        <item>Bread</item>
+        <item>Snacks / Treats</item>
+        <item>Eating Out</item>
+    </string-array>
+    <string-array name="sub_household">
+        <item>Cleaning supplies</item>
+        <item>Small repairs</item>
+        <item>Other household items</item>
+    </string-array>
+    <string-array name="sub_income">
+        <item>Salary</item>
+        <item>Academy Income</item>
+        <item>Agency Income</item>
+        <item>Other Income</item>
+    </string-array>
+    <string-array name="sub_irregular">
+        <item>Eid</item>
+        <item>Emergencies</item>
+        <item>Home repairs</item>
+        <item>Car repairs</item>
+    </string-array>
+    <string-array name="sub_medical">
+        <item>Doctor appointments</item>
+        <item>Supplements</item>
+        <item>Medicines</item>
+        <item>Pregnancy spikes</item>
+    </string-array>
+    <string-array name="sub_personal">
+        <item>Wife allowance</item>
+        <item>Barber</item>
+        <item>Clothing (self)</item>
+        <item>Cigarettes</item>
+        <item>Outings</item>
+        <item>Other personal</item>
+    </string-array>
+    <string-array name="sub_transport">
+        <item>Family trips / transport</item>
+        <item>Fuel (gasoline)</item>
+        <item>Bus / taxi</item>
+    </string-array>
+    <color name="accent">#ffc107</color>
+    <color name="bgLight">#eeeeee</color>
+    <color name="expenseRed">#C62828</color>
+    <color name="incomeGreen">#2E7D32</color>
+    <color name="primary">#091a2a</color>
+    <color name="primaryDark">#010c14</color>
+    <color name="primarySoft">#2196f3</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="textDark">#1F2937</color>
+    <color name="textMuted">#6B7280</color>
+    <string name="app_name">MyFinance</string>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:colorBackground">@color/bgLight</item>
+    </style>
+    <style name="DashboardCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/surface</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="contentPadding">16dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+    <style name="ToggleButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="backgroundTint">@color/toggle_button_background</item>
+        <item name="strokeColor">@color/toggle_button_stroke</item>
+        <item name="android:textColor">@color/toggle_button_text</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+</resources>
