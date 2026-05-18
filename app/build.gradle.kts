@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -35,6 +38,36 @@ android {
     }
     kotlinOptions {
         jvmTarget = "17"
+    }
+
+
+val keystorePropertiesFile = file("/home/workstation/Secrets/MyFinanceApp/keystore.properties")
+val keystoreProperties = Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+} else {
+    throw GradleException("Keystore properties file not found at ${keystorePropertiesFile.absolutePath}")
+}
+
+signingConfigs {
+    create("release") {
+        storeFile = file(keystoreProperties.getProperty("storeFile"))
+        storePassword = keystoreProperties.getProperty("storePassword")
+        keyAlias = keystoreProperties.getProperty("keyAlias")
+        keyPassword = keystoreProperties.getProperty("keyPassword")
+    }
+}
+
+    buildTypes {
+        release {
+            // Enable code shrinking, obfuscation, and optimization.
+            isMinifyEnabled = true
+            // Remove unused resources.
+            isShrinkResources = true
+            // Apply default ProGuard rules.
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("release")
+        }
     }
 }
 

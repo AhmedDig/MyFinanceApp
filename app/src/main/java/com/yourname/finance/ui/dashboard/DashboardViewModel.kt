@@ -7,8 +7,10 @@ import com.yourname.finance.FinanceApplication
 import com.yourname.finance.data.Transaction
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 
+@OptIn(ExperimentalCoroutinesApi::class)
 data class DashboardData(
     val month: String,
     val income: Double,
