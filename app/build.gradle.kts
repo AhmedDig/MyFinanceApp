@@ -41,22 +41,33 @@ android {
     }
 
 
-val keystorePropertiesFile = file("/home/workstation/Secrets/MyFinanceApp/keystore.properties")
-val keystoreProperties = Properties()
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
-} else {
-    throw GradleException("Keystore properties file not found at ${keystorePropertiesFile.absolutePath}")
-}
+    // Try to load from local file first, fall back to environment variables for CI
+    val keystoreProperties = Properties()
+    val keystorePropertiesFile = file("keystore.properties")
+    var enableSigning = false
 
-signingConfigs {
-    create("release") {
-        storeFile = file(keystoreProperties.getProperty("storeFile"))
-        storePassword = keystoreProperties.getProperty("storePassword")
-        keyAlias = keystoreProperties.getProperty("keyAlias")
-        keyPassword = keystoreProperties.getProperty("keyPassword")
+    if (keystorePropertiesFile.exists()) {
+        keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+        enableSigning = true
+    } else if (System.getenv("KEYSTORE_FILE") != null) {
+        // CI/CD environment - use environment variables
+        keystoreProperties.setProperty("storeFile", System.getenv("KEYSTORE_FILE"))
+        keystoreProperties.setProperty("storePassword", System.getenv("KEYSTORE_PASSWORD") ?: "")
+        keystoreProperties.setProperty("keyAlias", System.getenv("KEY_ALIAS") ?: "")
+        keystoreProperties.setProperty("keyPassword", System.getenv("KEY_PASSWORD") ?: "")
+        enableSigning = true
     }
-}
+
+    if (enableSigning) {
+        signingConfigs {
+            create("release") {
+                storeFile = file(keystoreProperties.getProperty("storeFile"))
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+            }
+        }
+    }
 
     buildTypes {
         release {
@@ -66,7 +77,9 @@ signingConfigs {
             isShrinkResources = true
             // Apply default ProGuard rules.
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("release")
+            if (enableSigning) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
 }
@@ -89,7 +102,7 @@ dependencies {
     
 
     // Lifecycle (ViewModel + LiveData)
-implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
-implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")   // <-- new
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")   // <-- new
 }
