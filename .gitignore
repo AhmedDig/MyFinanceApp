@@ -9,3 +9,5 @@
 .cxx
 local.properties
 /app/build
+!/app/build/outputs/apk/release/
+!/app/build/outputs/apk/release/*
